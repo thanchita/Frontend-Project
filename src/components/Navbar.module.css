@@ -1,0 +1,32 @@
+.navbar {
+  height: auto;
+  width: 100%;
+  background-color: #fff7e9;
+  padding: 20px 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #ff731d;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0px 12px;
+}
+
+.menu1 {
+  padding: 0px 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #ff731d;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}

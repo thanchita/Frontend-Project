@@ -1,0 +1,54 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff7e9;
+  padding: 96px 128px;
+  gap: 8px;
+  width: 100%;
+}
+
+.feedContainer {
+  color: #ff731d;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #7f8487;
+}
+.container {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  margin: 32px 128px;
+  width: 100%;
+}
+.button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff731d;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.container1 {
+  background-color: #fff;
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 36px 128px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  color: #656b6e;
+  border-radius: 12px;
+}
