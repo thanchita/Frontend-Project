@@ -6,15 +6,19 @@ import ContentDetail from "./pages/ContentDetail";
 import Login from "./pages/Login";
 import { useAuth } from "./providers/AuthProvider";
 import GuardedRoute from "./guard/GuardedRoute";
+import Create from "./pages/Create";
 
 function App() {
   const { isLoggedIn } = useAuth();
   return (
     <div className="App">
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<ContentDetail />} />
+
+        <Route path="/create" element={<Create />} />
 
         <Route
           element={

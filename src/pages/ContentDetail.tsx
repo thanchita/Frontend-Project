@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useContent from "../hooks/useContent";
 import classes from "./ContentDetail.module.css";
+import ReactStars from "react-rating-stars-component";
 
 const ContentDetail = () => {
   const { id } = useParams();
@@ -25,7 +26,15 @@ const ContentDetail = () => {
               <div className={classes.comment}>
                 <p className={classes.commentText}>{content.comment}</p>
                 <div className={classes.commentFooter}>
-                  <p>{content.rating}</p>
+                  <p>
+                    <ReactStars
+                      count={5}
+                      value={content.rating}
+                      size={16}
+                      activeColor="#ff731d"
+                      edit={false}
+                    />
+                  </p>
                   <p> Posted by: {content.postedBy.username}</p>
                   <p>{content.updatedAt}</p>
                 </div>

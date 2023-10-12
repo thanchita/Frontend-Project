@@ -18,6 +18,7 @@
   font-weight: 700;
   cursor: pointer;
   padding: 0px 12px;
+  text-decoration: none;
 }
 
 .menu1 {
@@ -29,4 +30,5 @@
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
 }

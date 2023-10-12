@@ -37,13 +37,18 @@ const useContents = () => {
       rating: newRating,
     };
 
+    const token = localStorage.getItem("token");
+
     setIsSubmitting(true);
     try {
       const res = await axios.post<ContentDTO>(
         "https://api.learnhub.thanayut.in.th/content",
         newContentBody,
         {
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
