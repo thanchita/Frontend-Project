@@ -36,7 +36,7 @@ const Create = () => {
 
   return (
     <div className={classes.container}>
-      <form className={classes.loginForm} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <h1 className={classes.title}>Create new content</h1>
         <div className={classes.form}>
           <div className={classes.form1}>
@@ -57,14 +57,14 @@ const Create = () => {
               onChange={(e) => setComment(e.target.value)}
             />
           </div>
-          <div className={classes.form1}>
+          <div className={classes.rating}>
             <label className={classes.label}>Rating</label>
             <ReactStars
               count={5}
               value={rating}
               onChange={ratingChanged}
               size={24}
-              activeColor="#ffd700"
+              activeColor="#ff731d"
             />
           </div>
 

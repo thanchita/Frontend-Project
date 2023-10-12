@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import useContent from "../hooks/useContent";
 import classes from "./ContentDetail.module.css";
 import ReactStars from "react-rating-stars-component";
+import { useAuth } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const ContentDetail = () => {
   const { id } = useParams();
   const { content, isLoading, error } = useContent(id || "1");
-
+  const { isLoggedIn } = useAuth();
   if (isLoading) return <h1>Loading...</h1>;
   if (error) return <p>{error}</p>;
 
@@ -37,6 +39,11 @@ const ContentDetail = () => {
                   </p>
                   <p> Posted by: {content.postedBy.username}</p>
                   <p>{content.updatedAt}</p>
+                  {isLoggedIn && (
+                    <Link to={"/edit"}>
+                      <p className={classes.edit}>Edit</p>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
