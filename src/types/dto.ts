@@ -29,6 +29,11 @@ export interface CreateContentDTO {
   rating: number;
 }
 
+export interface EditContentDTO {
+  comment: string;
+  rating: number;
+}
+
 export interface LoginDTO {
   username: string;
   password: string;

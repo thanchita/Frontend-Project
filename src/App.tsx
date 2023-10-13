@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import { useAuth } from "./providers/AuthProvider";
 import GuardedRoute from "./guard/GuardedRoute";
 import Create from "./pages/Create";
+import Edit from "./pages/Edit";
 
 function App() {
   const { isLoggedIn } = useAuth();
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<ContentDetail />} />
-
+        <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
 
         <Route

@@ -39,9 +39,10 @@ const ContentDetail = () => {
                   </p>
                   <p> Posted by: {content.postedBy.username}</p>
                   <p>{content.updatedAt}</p>
+
                   {isLoggedIn && (
-                    <Link to={"/edit"}>
-                      <p className={classes.edit}>Edit</p>
+                    <Link to={`/edit/${id}`} className={classes.edit}>
+                      Edit
                     </Link>
                   )}
                 </div>
