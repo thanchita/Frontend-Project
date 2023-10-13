@@ -9,7 +9,7 @@ interface IContentProps {
 
 const Content = ({ content }: IContentProps) => {
   return (
-    <Link to={`/post/${content.id}`}>
+    <Link className={classes.cardd} to={`/content/${content.id}`}>
       <div className={classes.card}>
         <img src={content.thumbnailUrl} className={classes.thumbnail}></img>
         <div className={classes.detail}>
@@ -18,10 +18,11 @@ const Content = ({ content }: IContentProps) => {
               <p className={classes.title}>{content.videoTitle}</p>
               <p className={classes.creator}>{content.creatorName}</p>
             </div>
+
             <p className={classes.comment}>{content.comment}</p>
           </div>
           <div className={classes.detailRow}>
-            <p> {content.postedBy.username}</p>
+            <p> {content.postedBy.name}</p>
             <p>
               <ReactStars
                 count={5}

@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 const Edit = () => {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
-  const [comment, setComment] = useState<string>("");
+  const [newComment, setNewComment] = useState<string>("");
   const [rating, setRating] = useState<number>(0);
   const { id } = useParams();
   const { editContent } = useContent(id || "1");
@@ -21,7 +21,7 @@ const Edit = () => {
     e.preventDefault();
     console.log("edit");
     try {
-      await editContent(comment, rating);
+      await editContent(newComment, rating);
 
       navigate("/");
     } catch (err) {
@@ -45,7 +45,7 @@ const Edit = () => {
             <input
               className={classes.input}
               type="text"
-              onChange={(e) => setComment(e.target.value)}
+              onChange={(e) => setNewComment(e.target.value)}
             />
           </div>
           <div className={classes.rating}>

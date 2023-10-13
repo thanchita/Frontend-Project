@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ContentDTO, EditContentDTO } from "../types/dto";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const useContent = (id: string) => {
   const [content, setContent] = useState<ContentDTO | null>(null);
@@ -15,8 +16,9 @@ const useContent = (id: string) => {
         const res = await axios.get<ContentDTO>(
           ` https://api.learnhub.thanayut.in.th/content/${id}`
         );
-
-        setContent(res.data);
+        const newDate = toDate(res.data.createdAt);
+        const newUpdate = toDate(res.data.updatedAt);
+        setContent({ ...res.data, createdAt: newDate, updatedAt: newUpdate });
       } catch (err) {
         setError("Data not found");
       } finally {
@@ -26,6 +28,11 @@ const useContent = (id: string) => {
 
     fetchData();
   }, [id]);
+
+  const toDate = (d: string) => {
+    const date = new Date(d);
+    return date.toDateString();
+  };
 
   const editContent = async (newComment: string, newRating: number) => {
     const newContentBody: EditContentDTO = {
@@ -56,7 +63,31 @@ const useContent = (id: string) => {
     }
   };
 
-  return { content, isLoading, error, isSubmitting, editContent };
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  const deleteContent = async () => {
+    try {
+      await axios.delete(`https://api.learnhub.thanayut.in.th/content/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      navigate("/");
+    } catch (error) {
+      setError("Cannot delete post");
+    }
+  };
+
+  return {
+    content,
+    isLoading,
+    error,
+    isSubmitting,
+    editContent,
+    deleteContent,
+  };
 };
 
 export default useContent;
