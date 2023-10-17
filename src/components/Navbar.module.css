@@ -1,7 +1,7 @@
 .navbar {
   height: auto;
   width: 100%;
-  background-color: #fff7e9;
+  background-color: black;
   padding: 20px 16px;
   box-sizing: border-box;
   display: flex;
@@ -13,7 +13,7 @@
   display: flex;
   gap: 16px;
   align-items: center;
-  color: #ff731d;
+  color: palevioletred;
   font-size: 26px;
   font-weight: 700;
   cursor: pointer;
@@ -26,7 +26,7 @@
   display: flex;
   gap: 16px;
   align-items: center;
-  color: #ff731d;
+  color: palevioletred;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;

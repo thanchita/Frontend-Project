@@ -64,7 +64,7 @@ const Create = () => {
               value={rating}
               onChange={ratingChanged}
               size={24}
-              activeColor="#ff731d"
+              activeColor="palevioletred"
             />
           </div>
 

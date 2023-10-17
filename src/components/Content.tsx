@@ -28,7 +28,7 @@ const Content = ({ content }: IContentProps) => {
                 count={5}
                 value={content.rating}
                 size={16}
-                activeColor="#ff731d"
+                activeColor="palevioletred"
                 edit={false}
               />
             </p>

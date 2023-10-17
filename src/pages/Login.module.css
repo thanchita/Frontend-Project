@@ -11,7 +11,7 @@
   align-items: center;
   font-size: 36px;
   font-weight: 700;
-  color: #ff731d;
+  color: palevioletred;
 }
 
 .form {
@@ -46,7 +46,7 @@
   padding: 12px 16px;
   border: none;
   border-radius: 4px;
-  background-color: #ff731d;
+  background-color: palevioletred;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
